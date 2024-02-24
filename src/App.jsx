@@ -3,10 +3,16 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import { Interface } from "./components/Interface";
 import { ScrollManager } from "./components/ScrollManager"
-import { useState } from "react";
+import { Menu } from "./components/Menu"
+import { useEffect, useState } from "react";
 
 function App() {
   const [section, setSection] = useState(0);
+  const [menuOpened, setMenuOpened] = useState(false);
+
+  useEffect(() => {
+    setMenuOpened(false);
+  }, [section]);
 
   return (
     <>
@@ -20,6 +26,11 @@ function App() {
           </Scroll>
         </ScrollControls>
       </Canvas>
+      <Menu
+          onSectionChange={setSection}
+          menuOpened={menuOpened}
+          setMenuOpened={setMenuOpened}
+      />
     </>
   );
 }
