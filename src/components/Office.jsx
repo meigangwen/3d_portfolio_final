@@ -40,6 +40,8 @@ export function Office(props) {
   useFrame(() => {
     textureMaterial.opacity = textureOpacity.get();
     textureGlassMaterial.opacity = glassTextureOpacity.get();
+
+    
   });
 
   return (
