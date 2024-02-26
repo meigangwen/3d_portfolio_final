@@ -10,7 +10,10 @@ import { motion } from "framer-motion-3d";
 import { useEffect, useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
+import { Background } from "./Background";
 import { Office } from "./Office";
+import { Projects } from "./Projects";
+
 
 export const Experience = (props) => {
   const { menuOpened } = props;
@@ -59,6 +62,7 @@ export const Experience = (props) => {
 
   return (
     <>
+      <Background />
       <motion.group
           position={[1.8, 0.2, 2.5]}
           rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
@@ -164,6 +168,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
       </motion.group>
+      <Projects />
     </>
   );
 };
